@@ -2,6 +2,8 @@ import testA from '../packages/test-a.vue';
 import testB from '../packages/test-b.vue';
 import submenu from '../packages/submenu.vue'
 import Supermenu from '../packages/Supermenu.vue'
+import './style/base.css'
+import './style/other.css'
 const components=[
   testA,
   testB,

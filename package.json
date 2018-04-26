@@ -13,14 +13,15 @@
     "src",
     "packages"
   ],
-  "dependencies": {
-    "vue": "^2.5.16",
-    "webpack": "^4.5.0"
+  "peerDependencies": {
+    "vue": "^2.5.16"
   },
   "devDependencies": {
     "babel-helpers": "^6.24.1",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-component": "^1.1.0",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
@@ -34,11 +35,15 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fs": "0.0.1-security",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "jest-serializer-vue": "^1.0.0",
     "mint-ui": "^2.2.13",
+    "nightwatch": "^0.9.21",
     "path": "^0.12.7",
     "postcss-import": "^11.1.0",
     "postcss-url": "^7.3.2",
     "style-loader": "^0.21.0",
+    "vue-jest": "^2.5.0",
     "vue-loader": "^14.2.2",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
@@ -50,7 +55,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --inline --progress  --config ./build/webpack.dev.conf.js",
     "build:common": "webpack --mode production --config ./build/webpack.common.conf.js",
-    "build:component": "webpack --mode production --config ./build/webpack.component.conf.js"
+    "build:component": "webpack --mode production --config ./build/webpack.component.conf.js",
+    "unit": "jest --config test/unit/jest.conf.js --coverage"
   },
   "author": "colin",
   "license": "ISC"
