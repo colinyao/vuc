@@ -1,6 +1,7 @@
-import A from './a.vue'
-import B from './b.vue'
+import testA from './testA.vue'
+import testB from './testB.vue'
 
 export {
-  A,B
+  testA,
+  testB
 }

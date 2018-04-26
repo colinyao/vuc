@@ -5,7 +5,7 @@
 </template>
 <script>
   export default{
-
+     name:'testb'
   }
 </script>
 <style lang="css">

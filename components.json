@@ -1,4 +1,6 @@
 {
-  "a":"./packages/a.vue",
-  "b":"./packages/b.vue"
+  "test-a":"./packages/test-a.vue",
+  "test-b":"./packages/test-b.vue",
+  "submenu":"./packages/submenu.vue",
+  "Supermenu":"./packages/Supermenu.vue"
 }

@@ -3,17 +3,25 @@ const webpack =require('webpack')
 const ExtractTextPlugin=require('extract-text-webpack-plugin')
 const nodeExternals = require('webpack-node-externals');
 const fs=require('fs')
+const vue={
+  root: 'Vue',
+  commonjs: 'vue',
+  commonjs2: 'vue',
+  amd: 'vue'
+}
 
+const componentData=require('../components.json')
+let entry=Object.assign({},componentData)
+let externals=Object.assign({},vue,nodeExternals())
 module.exports = {
-  entry:{
-    index:__dirname+'/../src/index.js'
-  },
+  entry:entry,
   output:{
     filename: '[name].js',
     path: __dirname+'/../lib',
-    library: 'index',
+    library: '[name]',
     libraryTarget: 'umd'
   },
+  externals:externals,
   module: {
     rules: [
       {
@@ -22,10 +30,7 @@ module.exports = {
       },
       {
         test:/\.css$/,
-        loader:ExtractTextPlugin.extract({
-            fallback:'style-loader',
-            use:'css-loader'
-        })
+        loader:ExtractTextPlugin.extract(['style-loader','css-loader'])
       },
       {
         test: /\.vue$/,
@@ -37,7 +42,7 @@ module.exports = {
               css: ExtractTextPlugin.extract({
               fallback:'vue-style-loader',
               use:'css-loader',
-              publicPath:"../",
+              publicPath:"../"
              }),
             }
           }
@@ -46,8 +51,10 @@ module.exports = {
     ],
   },
   plugins:[
+
     new ExtractTextPlugin({
-      filename: 'style.css'
+      filename: '[name]/style.css'
     }),
   ]
 };
+4036

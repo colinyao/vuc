@@ -1,8 +1,18 @@
 {
   "name": "colin_vuc",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "webpack4",
-  "main": "index.js",
+  "keywords": [
+    "component",
+    "vue"
+  ],
+  "main": "lib/index.js",
+  "style": "lib/style.css",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
   "dependencies": {
     "vue": "^2.5.16",
     "webpack": "^4.5.0"
@@ -26,6 +36,8 @@
     "html-webpack-plugin": "^3.2.0",
     "mint-ui": "^2.2.13",
     "path": "^0.12.7",
+    "postcss-import": "^11.1.0",
+    "postcss-url": "^7.3.2",
     "style-loader": "^0.21.0",
     "vue-loader": "^14.2.2",
     "vue-style-loader": "^4.1.0",
@@ -36,9 +48,9 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode development --inline --progress  --config ./build/webpack.dev.config.js",
-    "build:common": "webpack --mode production --config ./build/common.build.js",
-    "build:component": "webpack --mode production --config ./build/component.build.js"
+    "dev": "webpack-dev-server --mode development --inline --progress  --config ./build/webpack.dev.conf.js",
+    "build:common": "webpack --mode production --config ./build/webpack.common.conf.js",
+    "build:component": "webpack --mode production --config ./build/webpack.component.conf.js"
   },
   "author": "colin",
   "license": "ISC"
