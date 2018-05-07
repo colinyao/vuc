@@ -1,0 +1,18 @@
+{
+  "zh-CN": [
+    {
+      "name": "组件",
+      "groups": [
+        {
+          "groupName": "Notice",
+          "list": [
+            {
+              "path": "/alert",
+              "title": "Alert 警告"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
